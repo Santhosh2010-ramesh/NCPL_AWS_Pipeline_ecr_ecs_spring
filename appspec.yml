@@ -6,5 +6,5 @@ Resources:
       Properties:
         TaskDefinition: "arn:aws:ecs:us-east-1:047719652562:task-definition/ecsTaskExecutionRole:1"
         LoadBalancerInfo:
-          ContainerName: "springcontainer"
+          ContainerName: "spingproject1container"
           ContainerPort: 8080
