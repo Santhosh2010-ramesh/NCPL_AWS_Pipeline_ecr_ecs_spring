@@ -4,7 +4,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:047719652562:task-definition/ecsTaskExecutionRole:1"
+        TaskDefinition: "arn:aws:ecs:us-east-1:047719652562:task-definition/springproject1TD:3"
         LoadBalancerInfo:
           ContainerName: "spingproject1container"
           ContainerPort: 8080
