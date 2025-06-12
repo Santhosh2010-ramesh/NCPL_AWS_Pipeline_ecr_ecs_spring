@@ -25,7 +25,7 @@ phases:
       - echo Pushing Docker image to Amazon ECR...
       - docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG
       - echo Writing imagedefinitions.json...
-      - printf '[{"name":"spingproject1containerr","imageUri":"%s.dkr.ecr.%s.amazonaws.com/%s:%s"}]' $ACCOUNT_ID $REGION $REPO_NAME $IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"spingproject1container","imageUri":"%s.dkr.ecr.%s.amazonaws.com/%s:%s"}]' $ACCOUNT_ID $REGION $REPO_NAME $IMAGE_TAG > imagedefinitions.json
       - echo Writing appspec.yml...
       - |
         cat <<EOF > appspec.yml
@@ -37,7 +37,7 @@ phases:
                 TaskDefinition: 
                   Ref: TaskDefinition
                 LoadBalancerInfo:
-                  ContainerName: "sprinrajco"
+                  ContainerName: "spingproject1container"
                   ContainerPort: 8080
         EOF
 
