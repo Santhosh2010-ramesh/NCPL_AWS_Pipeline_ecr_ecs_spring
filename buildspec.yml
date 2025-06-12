@@ -27,19 +27,7 @@ phases:
       - echo Writing imagedefinitions.json...
       - printf '[{"name":"spingproject1container","imageUri":"%s.dkr.ecr.%s.amazonaws.com/%s:%s"}]' $ACCOUNT_ID $REGION $REPO_NAME $IMAGE_TAG > imagedefinitions.json
       - echo Writing appspec.yml...
-      - |
-        cat <<EOF > appspec.yml
-        version: 0.0
-        Resources:
-          - TargetService:
-              Type: AWS::ECS::Service
-              Properties:
-                TaskDefinition: 
-                  Ref: TaskDefinition
-                LoadBalancerInfo:
-                  ContainerName: "spingproject1container"
-                  ContainerPort: 8080
-        EOF
+      
 
 artifacts:
   files:
