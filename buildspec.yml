@@ -10,6 +10,7 @@ phases:
       - export REGION=us-east-1
       - export REPO_NAME=aws-ecs-docker
       - export IMAGE_TAG=latest
+      - echo "Qwertyramos@123" | docker login -u "santhosh2010" --password-stdin
       - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
 
   build:
